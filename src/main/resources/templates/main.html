@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/postimage" method="POST" enctype="multipart/form-data">
-    名前: <input type="file" name="image"></input>
-    <input type="submit" value="send data"/>
-</form>
+	<!-- enctype="multipart/form-data" : 画像、ファイルなどを送信できる-->
+	<form action="/file-system/image" method="POST" enctype="multipart/form-data">
+		名前: <input type="file" name="image"></input> <input type="submit" value="send data" />
+	</form>
+	画像は<img th:src="${base64image}"/>です
 </body>
 </html>

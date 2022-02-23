@@ -14,10 +14,13 @@ public class Image {
 	@GeneratedValue
     Long id;
 
+	//@Lob: データベースにバイナリデータを格納できる(画像のデータをテーブルに直接挿入する場合)
 	@Lob
     byte[] content;
 
     String name;
+    
+    String location;
 
 	public Long getId() {
 		return id;
@@ -41,6 +44,24 @@ public class Image {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public Image(String name, String location) {
+		super();
+		this.name = name;
+		this.location = location;
+	}
+
+	public Image() {
+		
 	}
     
     
